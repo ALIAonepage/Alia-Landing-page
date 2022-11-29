@@ -9,7 +9,7 @@
 
   <p align="center">
   Esse boilerplate foi criado durante o processo seletivo de 2022 do CITi e ele tem o intuito de aproximar as pessoas aspirantes à realidade
-  dentro do CITi. O boilerplate será usado durante a última etapa do processo seletivo, a qual tem o objetivo de capacitar tecnincamente as pessoas que entrarão no CITi.
+  dentro do CITi. O boilerplate será usado durante a última etapa do processo seletivo, a qual tem o objetivo de capacitar tecnincamente as pessoas que entrarão no CITi. Essa one page é para a startup 'Alia', um dos clientes do PTA 2022.2.
     <br />
     <a href="https://github.com/apfdamascena/pta-boilerplate"><strong>Explore the docs »</strong></a>
     <br />

@@ -7,9 +7,9 @@ export class Price{
     id: number
 
     @Column()
-    firstPrice: number
+    firstPrice: string
 
     @Column()
-    modifiedPrice: number
+    modifiedPrice: string
 
 }

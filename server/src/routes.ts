@@ -13,5 +13,8 @@ routes.put('/user/:id', userController.update);
 // model Price
 const priceController = new PriceController();
 routes.post('/price', priceController.create);
+routes.get('/price', priceController.get);
+routes.delete('/price/:id', priceController.delete);
+routes.put('/price/:id', priceController.update);
 
 export default routes;

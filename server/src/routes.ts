@@ -1,6 +1,6 @@
 import express from 'express';
 import UserController from '@controllers/UserController'
-import PartnersController from '@controllers/PartnersController';
+import PartnersController from '@controllers/PartnersController'
 
 const routes = express.Router();
 const userController = new UserController();
@@ -13,6 +13,8 @@ routes.put('/user/:id', userController.update);
 
 //Routes Partners
 routes.post('/partners', partnersController.create);
-
+routes.get('/partners', partnersController.get);
+routes.delete('/partners/:id', partnersController.delete);
+routes.put('/partners/:id', partnersController.update);
 
 export default routes;

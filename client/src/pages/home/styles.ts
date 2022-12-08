@@ -37,3 +37,9 @@ export const HomeContainer = styled.div`
     width: 25%;
   }
 `;
+
+export const Components = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`; 

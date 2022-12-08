@@ -1,24 +1,19 @@
 import React from "react";
-import { HomeContainer } from './styles';
+import { HomeContainer, Components } from './styles';
 import { LogoCITi } from '../../assets';
+import { StagesComponent } from "../../components";
 
 
-export const Home: React.FC = () => {
+export const Home = () => {
     return (
         <HomeContainer>
-            <img src={LogoCITi} alt="" />
-            <h1>ReactJS Boilerplate</h1>
-            <p>
-                Made with
-                {' '}
-                <strong>&lt; &#x0002F; &gt;</strong>
-                {' '}
-                and
-                {' '}
-                <strong>&hearts;</strong>
-                {' '}
-                by CITi
-            </p>
+          <h1>Etapas</h1>
+          <Components>
+            <StagesComponent icon={"img"} title={"Diagnóstico"}/>
+            <StagesComponent icon="img" title="Planejamento financeiro e estratégico"/>
+            <StagesComponent icon="img" title="Máquina de vendas"/>
+            <StagesComponent icon="img" title="Máquina de growth"/>
+          </Components>
         </HomeContainer>
     );
 }

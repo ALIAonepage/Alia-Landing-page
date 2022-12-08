@@ -9,7 +9,9 @@ type StagesProps = {
 export const StagesComponent = ({icon, title}: StagesProps) => {
     return(
         <StyledStages>
-            <StagesIcon>{icon}</StagesIcon>
+            <StagesIcon>
+                <img src={icon}></img>
+            </StagesIcon>
             <StagesTitle>{title}</StagesTitle>
         </StyledStages>
     );

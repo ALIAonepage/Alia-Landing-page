@@ -1,19 +1,21 @@
 import React from "react";
-import { HomeContainer, Components } from './styles';
-import { LogoCITi } from '../../assets';
+import { HomeContainer, Components, StagesContainer } from './styles';
 import { StagesComponent } from "../../components";
+import { RecStages } from "../../assets";
 
-
-export const Home = () => {
+export const Home: React.FC = () => {
     return (
         <HomeContainer>
-          <h1>Etapas</h1>
-          <Components>
-            <StagesComponent icon={"img"} title={"Diagnóstico"}/>
-            <StagesComponent icon="img" title="Planejamento financeiro e estratégico"/>
-            <StagesComponent icon="img" title="Máquina de vendas"/>
-            <StagesComponent icon="img" title="Máquina de growth"/>
-          </Components>
+          <StagesContainer>
+            <h1>Etapas</h1>
+            <img id="RecStages" src={RecStages}/>
+            <Components>
+              <StagesComponent icon={"img"} title={"texto"}/>
+              <StagesComponent icon="img" title="texto"/>
+              <StagesComponent icon="img" title="texto"/>
+              <StagesComponent icon="img" title="texto"/>
+            </Components>
+          </StagesContainer>
         </HomeContainer>
     );
 }

@@ -38,8 +38,32 @@ export const HomeContainer = styled.div`
   }
 `;
 
+export const StagesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255);
+  align-items: center;
+  text-align: center;
+  width: 100%;
+
+  h1{
+    color: rgba(0, 0, 0);
+    font-style: bold;
+    font-size: 30px;
+  }
+
+  img{
+    width: 130px;
+    height: 10px;
+    border-radius: 35px;
+  }
+
+`;
+
 export const Components = styled.div`
   width: 100%;
   display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
   justify-content: center;
 `; 

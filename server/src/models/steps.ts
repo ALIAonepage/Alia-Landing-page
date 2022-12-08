@@ -12,4 +12,4 @@ export class Steps {
     @Column()
     stepsDescription: string
 
-}
+} // two Columns

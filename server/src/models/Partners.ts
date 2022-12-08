@@ -7,9 +7,6 @@ export class Partners {
     id: number
 
     @Column()
-    imagePartner1: string
-
-    @Column()
-    imagePartner2: string
+    imagePartner: string
 
 }

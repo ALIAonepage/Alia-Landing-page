@@ -5,12 +5,12 @@ import { Citi, Crud } from '../global'
 export default class StepsController implements Crud {
 
     async create(request: Request, response: Response){
-        const {stepImage1, stepDescription1, stepImage2, stepDescription2, stepImage3, stepDescription3 , stepImage4, stepDescription4} = request.body;
+        const {stepsImage, stepsDescription} = request.body;
 
-        const isAnyUndefined = Citi.areValuesUndefined(stepImage1, stepDescription1, stepImage2, stepDescription2, stepImage3, stepDescription3 , stepImage4, stepDescription4);
+        const isAnyUndefined = Citi.areValuesUndefined(stepsImage, stepsDescription);
         if(isAnyUndefined) return response.status(400).send();
 
-        const newSteps = { stepImage1, stepDescription1, stepImage2, stepDescription2, stepImage3, stepDescription3 , stepImage4, stepDescription4 };
+        const newSteps = { stepsImage, stepsDescription };
         const {httpStatus, message} = await Citi.insertIntoDatabase(Steps, newSteps);
 
         return response.status(httpStatus).send({ message });
@@ -33,12 +33,12 @@ export default class StepsController implements Crud {
 
     async update(request: Request, response: Response){
         const { id } = request.params;
-        const {stepImage1, stepDescription1, stepImage2, stepDescription2, stepImage3, stepDescription3 , stepImage4, stepDescription4 } = request.body;
+        const {stepsImage, stepsDescription } = request.body;
 
-        const isAnyUndefined = Citi.areValuesUndefined(stepImage1, stepDescription1, stepImage2, stepDescription2, stepImage3, stepDescription3 , stepImage4, stepDescription4, id);
+        const isAnyUndefined = Citi.areValuesUndefined(stepsImage, stepsDescription, id);
         if(isAnyUndefined) return response.status(400).send();
 
-        const StepsWithUpdatedValues = { stepImage1, stepDescription1, stepImage2, stepDescription2, stepImage3, stepDescription3 , stepImage4, stepDescription4 };
+        const StepsWithUpdatedValues = { stepsImage, stepsDescription };
 
         const { httpStatus, messageFromUpdate } = await Citi.updateValue(Steps, id, StepsWithUpdatedValues);
         return response.status(httpStatus).send({ messageFromUpdate });

@@ -68,3 +68,29 @@ export const StyledSubscriptionField = styled.div`
         }
     }
 `;
+
+export const StyledButton = styled.div`
+    display: flex;
+
+    width: fit-content;
+    
+    border-radius: 5px;
+    
+    background-color: #ff2c7d;
+    color: #fff;
+    
+    button{
+        padding: 10px;
+
+        font-size: 28px;
+
+        border: none;
+
+        background-color: transparent;
+        color: #fff;
+    }
+
+    :hover{
+        background-color: #ff2c7dcc;
+    }
+`;

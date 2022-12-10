@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledSubscriptionComponent, SubscriptionContainer, StyledSubscriptionForm, StyledSubscriptionField } from "./styles";
+import { StyledSubscriptionComponent, SubscriptionContainer, StyledSubscriptionForm, StyledSubscriptionField, StyledButton } from "./styles";
 
 type SubscriptionFormType = {
     propriedade?: string;
@@ -73,6 +73,8 @@ const SubscriptionForm = ({ propriedade }: SubscriptionFormType) => {
                     dataField="site"
                     labelTitle="Site:"
                 />
+
+                <SubmitButton />
             </form>
         </StyledSubscriptionForm>
     );
@@ -94,5 +96,15 @@ const SubscriptionField = ({ dataField, labelTitle, inputType="text" }: Subscrip
                 id={dataField}
             />
         </StyledSubscriptionField>
+    );
+}
+
+const SubmitButton: React.FC = () => {
+    return (
+        <StyledButton>
+            <button type="submit">
+                Inscrição
+            </button>
+        </StyledButton>
     );
 }

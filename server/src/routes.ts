@@ -9,6 +9,7 @@ import StepsController from '@controllers/StepsController'
 const routes = express.Router();
 const userController = new UserController();
 const stepsController = new StepsController();
+const subscriptionController = new SubscriptionController();
 
 routes.post('/user', userController.create);
 routes.get('/user', userController.get);
@@ -20,7 +21,7 @@ routes.post('/partners', partnersController.create);
 routes.get('/partners', partnersController.get);
 routes.delete('/partners/:id', partnersController.delete);
 routes.put('/partners/:id', partnersController.update);
-const subscriptionController = new SubscriptionController();
+
 routes.post('/subscription', subscriptionController.create);
 routes.get('/subscription', subscriptionController.get);
 routes.delete('/subscription/:id', subscriptionController.delete);

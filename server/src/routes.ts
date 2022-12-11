@@ -1,5 +1,6 @@
 import express from 'express';
 import UserController from '@controllers/UserController'
+import PriceController from '@controllers/PriceController';
 import PartnersController from '@controllers/PartnersController'
 
 const partnersController = new PartnersController();
@@ -16,6 +17,12 @@ routes.get('/user', userController.get);
 routes.delete('/user/:id', userController.delete);
 routes.put('/user/:id', userController.update);
 
+// model Price
+const priceController = new PriceController();
+routes.post('/price', priceController.create);
+routes.get('/price', priceController.get);
+routes.delete('/price/:id', priceController.delete);
+routes.put('/price/:id', priceController.update);
 //Routes Partners
 routes.post('/partners', partnersController.create);
 routes.get('/partners', partnersController.get);

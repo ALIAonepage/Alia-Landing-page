@@ -1,5 +1,5 @@
 import { PriceComponent } from "./Price";
 
 export {
-    PriceComponent
+    PriceComponent,
 }

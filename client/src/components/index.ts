@@ -1,5 +1,7 @@
+import { SubscriptionComponent } from "./Subscription";
 import { PriceComponent } from "./Price";
 
 export {
-    PriceComponent,
+    SubscriptionComponent,
+    PriceComponent, 
 }

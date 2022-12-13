@@ -12,8 +12,8 @@ export const Home: React.FC = () => {
      
         <div>
             <StagesComponent/>
-            <SubscriptionComponent />
             <PriceComponent />
+            <SubscriptionComponent />
         </div>
     );
 }

@@ -10,3 +10,19 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 `;
+
+  body {
+    background: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
+  }
+
+
+  button {
+    cursor: pointer;
+  }
+  
+  [disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+`;

@@ -1,5 +1,11 @@
 import IntroductionComponent from "./Introduction";
+import { StagesComponent } from "./Stages";
+import { SubscriptionComponent } from "./Subscription";
+import { PriceComponent } from "./Price";
 
 export {
-    IntroductionComponent
+    IntroductionComponent,
+    StagesComponent,
+    SubscriptionComponent,
+    PriceComponent
 }

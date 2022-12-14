@@ -1,12 +1,19 @@
 import React from "react";
-import { HomeContainer } from './styles';
+import { StagesComponent } from "../../components";
+import { SubscriptionComponent } from "../../components";
 import { IntroductionComponent }  from "../../components";
+import { PriceComponent } from "../../components";
+
 
 
 export const Home: React.FC = () => {
     return (
-        <HomeContainer>
+     
+        <div>
             <IntroductionComponent/>
-        </HomeContainer>
+            <StagesComponent/>
+            <PriceComponent />
+            <SubscriptionComponent />
+        </div>
     );
 }

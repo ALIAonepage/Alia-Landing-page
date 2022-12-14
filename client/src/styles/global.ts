@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 87.5%;
     }
   }
-`;
 
   body {
     background: ${(props) => props.theme.colors.background};

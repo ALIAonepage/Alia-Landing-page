@@ -1,16 +1,16 @@
 import React from "react";
 import { StagesComponent } from "../../components";
 import { SubscriptionComponent } from "../../components";
-import { HomeContainer } from './styles';
+import { IntroductionComponent }  from "../../components";
 import { PriceComponent } from "../../components";
 
-import { LogoCITi } from '../../assets';
 
 
 export const Home: React.FC = () => {
     return (
      
         <div>
+            <IntroductionComponent/>
             <StagesComponent/>
             <PriceComponent />
             <SubscriptionComponent />

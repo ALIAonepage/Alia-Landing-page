@@ -11,7 +11,7 @@ export const IntroductionComponent: React.FC = () => {
                 <div id="text">
                     <h1>Venha potencializar <br/> seu serviço!</h1>
                     <h2>Faça parte do nosso ecossistema <br/> de empresas e startups </h2>
-                    <a href="#div"> Inscrição</a>
+                    <a href="#Forms"> Inscrição</a>
                 </div>
             </div>
         </IntroductionContainer>

@@ -24,7 +24,7 @@ export const StagesComponent: React.FC = () => {
         <StyledStages>
             <StagesContainer>
                 <h1>Etapas</h1>
-                <img id="RecStages" src={RecStages}/>
+                <img src={RecStages}></img>
                 <Components>
                     <StagesTag icon={"img"} title={"texto"}/>
                     <StagesTag icon="img" title="texto"/>

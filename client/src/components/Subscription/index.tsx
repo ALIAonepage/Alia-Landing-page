@@ -16,7 +16,7 @@ export const SubscriptionComponent: React.FC = () => {
         <StyledSubscriptionComponent>
             
             <SubscriptionContainer>
-                <h2>
+                <h2 id="Forms">
                     Inscreva-se no nosso programa
                 </h2>
 

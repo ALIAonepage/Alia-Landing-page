@@ -1,8 +1,7 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { StagesContainer, StyledStages, ContainerTag, Components, StagesIcon, StagesTitle} from "./styles";
 import { RecStages } from "../../assets";
-import axios from "axios";
 import apiAxios from "../../services/api";
 
 type StagesProps = {
@@ -28,12 +27,12 @@ export const StagesComponent: React.FC = () => {
     const [icon, setIcon] = useState('');
     const [title, setTitle] = useState('');
 
-    const handleGet = async () => {
-        await apiAxios.get('/steps')
+    useEffect(() => {
+        apiAxios.get('/steps')
          .then(res => {console.log(res)})
          .catch(err => {console.log(err)})
     
-    }
+    })
 
     return(
         <StyledStages>

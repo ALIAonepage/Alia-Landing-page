@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyledSubscriptionComponent, SubscriptionContainer, StyledSubscriptionForm, StyledSubscriptionField, StyledButton } from "./styles";
-
-type SubscriptionFormType = {
-    propriedade?: string;
-}
+import apiAxios from "../../services/api";
 
 type SubscriptionFieldType = {
     dataField?: string;
     labelTitle?: string;
     inputType?: string;
+    onChangeFunction: Function;
 }
 
 export const SubscriptionComponent: React.FC = () => {
@@ -27,60 +25,119 @@ export const SubscriptionComponent: React.FC = () => {
     );
 }
 
-const SubscriptionForm = ({ propriedade }: SubscriptionFormType) => {
+const SubscriptionForm: React.FC = () => {
+
+    const [firstName, setFirstName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState(0);
+    const [email, setEmail] = useState('');
+    const [company, setCompany] = useState('');
+    const [partnersNumber, setPartnersNumber] = useState(0);
+    const [segment, setSegment] = useState('');
+    const [solutionDescribe, setSolutionDescribe] = useState('');
+    const [site, setSite] = useState('');
+
+    const handleSubmit = () => {
+        apiAxios.post('/subscription',
+        {
+            "firstName": firstName,
+            "phoneNumber": phoneNumber,
+            "email": email,
+            "company": company,
+            "partnersNumber": partnersNumber,
+            "segment": segment,
+            "solutionDescribe": solutionDescribe,
+            "site": site
+        }).then(log => {console.log(log)})
+        .catch(err => {console.log(err)})
+    }
+
+    console.log(
+        `
+        firstName: ${firstName}
+        phoneNumber: ${phoneNumber}
+        email: ${email}
+        company: ${company}
+        partnersNumber: ${partnersNumber}
+        segment: ${segment}
+        solutionDescribe: ${solutionDescribe}
+        site: ${site}
+        `
+    )
+
     return (
         <StyledSubscriptionForm>
-            <form action="" method="post">
-                <SubscriptionField 
-                    dataField="firstName"
-                    labelTitle="Nome:"
-                />
+            <SubscriptionField 
+                dataField="firstName"
+                labelTitle="Nome:"
 
-                <SubscriptionField 
-                    dataField="phoneNumber"
-                    labelTitle="Telefone:"
-                    inputType="number"
-                />
+                onChangeFunction={setFirstName}
+            />
 
-                <SubscriptionField 
-                    dataField="email"
-                    labelTitle="E-mail:"
-                    inputType="email"
-                />
+            <SubscriptionField 
+                dataField="phoneNumber"
+                labelTitle="Telefone:"
+                inputType="number"
+                
+                onChangeFunction={setPhoneNumber}
+            />
 
-                <SubscriptionField 
-                    dataField="company"
-                    labelTitle="Empresa:"
-                />
+            <SubscriptionField 
+                dataField="email"
+                labelTitle="E-mail:"
+                inputType="email"
+                
+                onChangeFunction={setEmail}
+            />
 
-                <SubscriptionField 
-                    dataField="partnersNumber"
-                    labelTitle="Quantidade de sócios:"
-                    inputType="number"
-                />
+            <SubscriptionField 
+                dataField="company"
+                labelTitle="Empresa:"
+                
+                onChangeFunction={setCompany}
+            />
 
-                <SubscriptionField 
-                    dataField="segment"
-                    labelTitle="Segmento:"
-                />
+            <SubscriptionField 
+                dataField="partnersNumber"
+                labelTitle="Quantidade de sócios:"
+                inputType="number"
+                
+                onChangeFunction={setPartnersNumber}
+            />
 
-                <SubscriptionField 
-                    dataField="solutionDescribe"
-                    labelTitle="Descreva a sua solução:"
-                />
+            <SubscriptionField 
+                dataField="segment"
+                labelTitle="Segmento:"
+                
+                onChangeFunction={setSegment}
+            />
 
-                <SubscriptionField 
-                    dataField="site"
-                    labelTitle="Site:"
-                />
+            <SubscriptionField 
+                dataField="solutionDescribe"
+                labelTitle="Descreva a sua solução:"
+                
+                onChangeFunction={setSolutionDescribe}
+            />
 
-                <SubmitButton />
-            </form>
+            <SubscriptionField 
+                dataField="site"
+                labelTitle="Site:"
+                
+                onChangeFunction={setSite}
+            />
+
+            <StyledButton>
+                <button 
+                    type="submit"
+                    onClick={handleSubmit}
+                >
+                    Inscrição
+                </button>
+            </StyledButton>
         </StyledSubscriptionForm>
     );
 }
 
-const SubscriptionField = ({ dataField, labelTitle, inputType="text" }: SubscriptionFieldType) => {
+const SubscriptionField = ({ dataField, labelTitle, inputType="text", onChangeFunction }: SubscriptionFieldType) => {
     return (
         <StyledSubscriptionField>
             <label 
@@ -94,17 +151,9 @@ const SubscriptionField = ({ dataField, labelTitle, inputType="text" }: Subscrip
                 type={inputType} 
                 name={dataField}
                 id={dataField}
+
+                onChange={value => onChangeFunction(value.target.value)}
             />
         </StyledSubscriptionField>
-    );
-}
-
-const SubmitButton: React.FC = () => {
-    return (
-        <StyledButton>
-            <button type="submit">
-                Inscrição
-            </button>
-        </StyledButton>
     );
 }

@@ -26,10 +26,10 @@ export const StagesContainer = styled.div`
     h1{
         color: #000000;
         font-family: 'Poppins Bold';
-    }
+        margin-bottom: 0;
 
-    #RecStages{
-        width: 160px;
+    img{
+        width: 100px;
         height: 10px;
     }
 
@@ -48,13 +48,16 @@ export const Components = styled.div`
 export const ContainerTag = styled.div`
     margin: 40%;
     text-aling: center; 
-    aling-itend: center;
+    align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const StagesIcon = styled.div`
     width: 60px;
     height: 60px;
+    display: flex;
 `;
 
 export const StagesTitle = styled.div`
@@ -64,8 +67,9 @@ export const StagesTitle = styled.div`
         src: url(${PoppinsRegular}) format('woff2'); 
     }
 
+    display: flex;
     font-family: 'Poppins';
-    text-aling: center;    
+    text-align: center; 
     font-size: 32px
     width: 60px;
     height: 60px;

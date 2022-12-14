@@ -9,7 +9,7 @@ export const IntroductionContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100%;
+    height: 50vw;
     background: linear-gradient(180deg, #02ECFF 17.63%, #249EE7 38.24%, #162C8D 64.75%);
     z-index: -5;
     #text{
@@ -65,6 +65,7 @@ export const IntroductionContainer = styled.div`
         font-size: 24px;
         width: 170px;
         height: 37px;
+        margin-top: 5%;
     }
     #color{
         display: flex;

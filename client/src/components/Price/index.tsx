@@ -14,7 +14,10 @@ export const PriceComponent: React.FC = () => {
 
     useEffect(() => {
         axios.get('http://localhost:3001/price')
-        .then(res => console.log(res))
+        .then(res => {
+            setFirstPrice(res.data[0].firstPrice)
+            setModifiedPrice(res.data[0].modifiedPrice)
+        })
         .catch(err => console.log(err))
     }, [])
 

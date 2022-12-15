@@ -8,8 +8,8 @@ export const IntroductionContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 50vw;
+    width: 100%;
+    height: 600px;
     background: linear-gradient(180deg, #02ECFF 17.63%, #249EE7 38.24%, #162C8D 64.75%);
     z-index: -5;
     #text{

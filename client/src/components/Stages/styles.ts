@@ -19,7 +19,6 @@ export const StagesContainer = styled.div`
 
     @font-face {
     font-family: 'Poppins Bold';
-    font-size: 32px;
     src: url(${PoppinsBold}) format('woff2'); 
     }
     
@@ -27,6 +26,7 @@ export const StagesContainer = styled.div`
         color: #000000;
         font-family: 'Poppins Bold';
         margin-bottom: 0;
+        font-size: 60px;
 
     img{
         width: 100px;
@@ -63,14 +63,13 @@ export const StagesIcon = styled.div`
 export const StagesTitle = styled.div`
     @font-face {
         font-family: 'Poppins';
-        font-size: 32px;
         src: url(${PoppinsRegular}) format('woff2'); 
     }
 
     display: flex;
     font-family: 'Poppins';
     text-align: center; 
-    font-size: 32px
+    font-size: 30px;
     width: 60px;
     height: 60px;
     

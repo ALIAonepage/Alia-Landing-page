@@ -1,9 +1,10 @@
 import React from "react";
 import { PartnershipsContainer, ContainerTag } from './styles';
 import Rectangle from '../../assets/Rectangle.png';
-import {Sebrae, FACEPE} from '../../assets';
+// import {Sebrae, FACEPE} from '../../assets';
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { appendFile } from "fs";
 
 type PartnershipsProps = {
     title: string;
@@ -29,29 +30,20 @@ export const PartnershipsTag = ({title, image1, image2}:PartnershipsProps) => {
 
 export const PartnershipsComponent: React.ElementType = () => {
 
-    const [image1, setImage1] = useState('');
-    const [image2, setImage2] = useState('');
-
     const [image, setImage] = useState<PartnershipsProps[]>([]);
-    const [imageList, setImageList] = useState<[]>([]);
     
+    const getImages = async () => {
+        const res = await axios.get('http://localhost:3001/steps');
+        setImage(res.data);
+        }
+
     useEffect(() => {
-        axios.get('http://localhost:3001/steps')
-         .then(res => {
-            const dataFromGet = res.data;
-
-            setImageList(dataFromGet)
-
-        })
-         .catch(err => {console.log(err)})
-    
+        getImages();   
     }, [])
 
     return (
         <PartnershipsContainer>
-            {imageList.map((image) => (
-                <PartnershipsTag key={image['id']} title={"Parcerias"} image1={image['imagePartner']} image2={image['ImagePartner']}/>
-            ))}
+            <PartnershipsTag title={"Parcerias"} image1={image&&image[0].image1} image2={image&&image[1].image2}/>
             {/* <PartnershipsTag title={"Parcerias"} image1={Sebrae} image2={FACEPE}/> */}
         </PartnershipsContainer>
     );

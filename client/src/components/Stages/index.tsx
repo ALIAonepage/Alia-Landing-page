@@ -1,6 +1,9 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { StagesContainer, StyledStages, ContainerTag, Components, StagesIcon, StagesTitle} from "./styles";
 import { RecStages } from "../../assets";
+import axios from "axios";
+import apiAxios from "../../services/api";
 
 type StagesProps = {
     icon: string;
@@ -8,6 +11,7 @@ type StagesProps = {
 }
 
 export const StagesTag = ({icon, title}: StagesProps) => {
+    
     return(
         <ContainerTag>
             <StagesIcon>
@@ -20,16 +24,34 @@ export const StagesTag = ({icon, title}: StagesProps) => {
 }
 
 export const StagesComponent: React.FC = () => {
+
+    const [icon, setIcon] = useState('');
+    const [title, setTitle] = useState('');
+
+    const [step, setStep] = useState<StagesProps[]>([]);
+    const [stepsList, setStepsList] = useState<[]>([]);
+    
+    useEffect(() => {
+        axios.get('http://localhost:3001/steps')
+         .then(res => {
+            const dataFromGet = res.data;
+
+            setStepsList(dataFromGet)
+
+        })
+         .catch(err => {console.log(err)})
+    
+    }, [])
+
     return(
         <StyledStages>
             <StagesContainer>
                 <h1>Etapas</h1>
                 <img src={RecStages}></img>
                 <Components>
-                    <StagesTag icon={"img"} title={"texto"}/>
-                    <StagesTag icon="img" title="texto"/>
-                    <StagesTag icon="img" title="texto"/>
-                    <StagesTag icon="img" title="texto"/>
+                    {stepsList.map((step) => (
+                        <StagesTag key={step['id']} icon={step['stepsImage']} title={step['stepsDescription']}/>
+                    ))}
                 </Components>
           </StagesContainer>
         </StyledStages>

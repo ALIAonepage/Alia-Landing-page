@@ -10,7 +10,7 @@ export class Subscription {
     firstName: string
 
     @Column()
-    phoneNumber: number
+    phoneNumber: string
 
     @Column()
     email: string

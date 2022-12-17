@@ -25,7 +25,6 @@ export const ContainerTag = styled.div`
     align-items: center;
     flex-direction: column;
     width: 22vw;
-    height: 8px;
   }
   div {
     display: flex;

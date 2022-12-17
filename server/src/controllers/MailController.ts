@@ -40,8 +40,10 @@ const SendMail = async (request: Request, response: Response) => {
         })
 
     } catch (error) {
-        return response.status(500).send({
-            answer: "Desculpe, houve um problema."
+        console.log(error)
+
+        return response.status(error.responseCode).send({
+            answer: "Desculpe, houve algum tipo de problema."
         })
     }
 

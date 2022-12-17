@@ -12,10 +12,15 @@ type EmailConfig = {
 const MailServer = async ({ destinationUser, subjectText, htmlOption }: EmailConfig) => {
 
     const transporter = nodemailer.createTransport({
+        host: 'host',
+        port: 25,
         service: 'gmail',
         auth: {
             user: process.env.EMAIL,
             pass: process.env.PASSWORD
+        },
+        tls: {
+            rejectUnauthorized: false
         }
     });
 

@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyledSubscriptionComponent, SubscriptionContainer, StyledSubscriptionForm, StyledSubscriptionField, StyledButton } from "./styles";
-
-type SubscriptionFormType = {
-    propriedade?: string;
-}
+import apiAxios from "../../services/api";
+import axios from "axios";
 
 type SubscriptionFieldType = {
-    dataField?: string;
     labelTitle?: string;
-    inputType?: string;
+    onChangeFunction: Function;
+}
+
+type Subscription = {
+    firstName: string;
+    phoneNumber: string;
+    email: string;
+    company: string;
+    partnersNumber: number;
+    segment: string;
+    solutionDescribe: string;
+    site: string;
 }
 
 export const SubscriptionComponent: React.FC = () => {
@@ -27,84 +35,134 @@ export const SubscriptionComponent: React.FC = () => {
     );
 }
 
-const SubscriptionForm = ({ propriedade }: SubscriptionFormType) => {
+const SubscriptionForm: React.FC = () => {
+
+    const [firstName, setFirstName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [company, setCompany] = useState("");
+    const [partnersNumber, setPartnersNumber] = useState("");
+    const [segment, setSegment] = useState("");
+    const [solutionDescribe, setSolutionDescribe] = useState("");
+    const [site, setSite] = useState("");
+
+    const handleSubmit = () => {
+        apiAxios.post('/subscription',
+        {
+            "firstName": firstName,
+            "phoneNumber": phoneNumber,
+            "email": email,
+            "company": company,
+            "partnersNumber": partnersNumber,
+            "segment": segment,
+            "solutionDescribe": solutionDescribe,
+            "site": site
+        }
+        ).then(log => {console.log(log)})
+        .catch(err => {console.log(err)})
+
+        apiAxios.post('/email',
+        {
+            "firstName": firstName,
+            "phoneNumber": phoneNumber,
+            "email": email,
+            "company": company,
+            "partnersNumber": partnersNumber,
+            "segment": segment,
+            "solutionDescribe": solutionDescribe,
+            "site": site
+        }
+        ).then(log => {console.log(log)})
+        .catch(err => {console.log(err)})
+        
+        console.log(
+            `
+            firstName: ${firstName}
+            phoneNumber: ${phoneNumber}
+            email: ${email}
+            company: ${company}
+            partnersNumber: ${partnersNumber}
+            segment: ${segment}
+            solutionDescribe: ${solutionDescribe}
+            site: ${site}
+            `
+        )
+    }
+
+
     return (
         <StyledSubscriptionForm>
-            <form action="" method="post">
-                <SubscriptionField 
-                    dataField="firstName"
-                    labelTitle="Nome:"
-                />
+            <SubscriptionField 
+                labelTitle="Nome:"
 
-                <SubscriptionField 
-                    dataField="phoneNumber"
-                    labelTitle="Telefone:"
-                    inputType="number"
-                />
+                onChangeFunction={setFirstName}
+            />
 
-                <SubscriptionField 
-                    dataField="email"
-                    labelTitle="E-mail:"
-                    inputType="email"
-                />
+            <SubscriptionField 
+                labelTitle="Telefone:"
+                
+                onChangeFunction={setPhoneNumber}
+            />
 
-                <SubscriptionField 
-                    dataField="company"
-                    labelTitle="Empresa:"
-                />
+            <SubscriptionField 
+                labelTitle="E-mail:"
+                
+                onChangeFunction={setEmail}
+            />
 
-                <SubscriptionField 
-                    dataField="partnersNumber"
-                    labelTitle="Quantidade de sócios:"
-                    inputType="number"
-                />
+            <SubscriptionField 
+                labelTitle="Empresa:"
+                
+                onChangeFunction={setCompany}
+            />
 
-                <SubscriptionField 
-                    dataField="segment"
-                    labelTitle="Segmento:"
-                />
+            <SubscriptionField 
+                labelTitle="Quantidade de sócios:"
+                
+                onChangeFunction={setPartnersNumber}
+            />
 
-                <SubscriptionField 
-                    dataField="solutionDescribe"
-                    labelTitle="Descreva a sua solução:"
-                />
+            <SubscriptionField 
+                labelTitle="Segmento:"
+                
+                onChangeFunction={setSegment}
+            />
 
-                <SubscriptionField 
-                    dataField="site"
-                    labelTitle="Site:"
-                />
+            <SubscriptionField 
+                labelTitle="Descreva a sua solução:"
+                
+                onChangeFunction={setSolutionDescribe}
+            />
 
-                <SubmitButton />
-            </form>
+            <SubscriptionField 
+                labelTitle="Site:"
+                
+                onChangeFunction={setSite}
+            />
+
+            <StyledButton>
+                <button 
+                    onClick={handleSubmit}
+                >
+                    Inscrição
+                </button>
+            </StyledButton>
         </StyledSubscriptionForm>
     );
 }
 
-const SubscriptionField = ({ dataField, labelTitle, inputType="text" }: SubscriptionFieldType) => {
+const SubscriptionField = ({ labelTitle, onChangeFunction }: SubscriptionFieldType) => {
     return (
         <StyledSubscriptionField>
             <label 
-                htmlFor={dataField}
             >
                 {labelTitle}
             </label>
 
             <input 
-                required
-                type={inputType} 
-                name={dataField}
-                id={dataField}
+                type="text"
+                onChange={value => onChangeFunction(value.target.value)}
             />
         </StyledSubscriptionField>
-    );
-}
-
-const SubmitButton: React.FC = () => {
-    return (
-        <StyledButton>
-            <button type="submit">
-                Inscrição
-            </button>
-        </StyledButton>
     );
 }

@@ -15,7 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.colors.text};
   }
 
-
   button {
     cursor: pointer;
   }

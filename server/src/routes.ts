@@ -2,6 +2,7 @@ import express from 'express';
 import UserController from '@controllers/UserController'
 import PriceController from '@controllers/PriceController';
 import PartnersController from '@controllers/PartnersController'
+import { SendMail } from '@controllers/MailController';
 
 const partnersController = new PartnersController();
 import SubscriptionController from '@controllers/SubscriptionController'
@@ -38,5 +39,7 @@ routes.post('/steps', stepsController.create);
 routes.get('/steps', stepsController.get);
 routes.delete('/steps/:id', stepsController.delete);
 routes.put('/steps/:id', stepsController.update);
+
+routes.post('/email', SendMail)
 
 export default routes; 

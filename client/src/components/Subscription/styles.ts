@@ -48,10 +48,9 @@ export const StyledSubscriptionField = styled.div`
         font-size: 28px;
     }
     
-    input{
+    input{        
         display: flex;
-        //flex-wrap: wrap;
-
+        
         width: 100%;
         
         font-size: 20px;
@@ -80,9 +79,9 @@ export const StyledButton = styled.div`
     color: #fff;
     
     button{
-        padding: 10px;
-
         font-size: 28px;
+        
+        padding: 10px;
 
         border: none;
 

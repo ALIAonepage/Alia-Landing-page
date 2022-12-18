@@ -7,11 +7,13 @@ export const IntroductionContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    padding-left: 10%;
     width: 100%;
-    height: 600px;
-    background: linear-gradient(180deg, #02ECFF 17.63%, #249EE7 38.24%, #162C8D 64.75%);
-    z-index: -5;
+    height: 700px;
+    background-repeat: no-repeat;
+    background-image: url(${ImgIntroduction}), linear-gradient(180deg, #02ECFF 17.63%, #249EE7 38.24%, #162C8D 64.75%);
+
     #text{
         display: flex;
         flex-direction: column;
@@ -66,12 +68,6 @@ export const IntroductionContainer = styled.div`
         width: 170px;
         height: 37px;
         margin-top: 5%;
-    }
-    #color{
-        display: flex;
-        background-image: url(${ImgIntroduction});
-        width: 100%;
-        height: 100%;
     }
     
 `;

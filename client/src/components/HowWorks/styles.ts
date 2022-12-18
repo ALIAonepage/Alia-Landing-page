@@ -1,7 +1,7 @@
 import styled from 'styled-components'; 
 import { PoppinsBold, PoppinsLight } from '../../assets/index';
 
-export const HowWorksContainer = styled.div`
+export const ContainerTag = styled.div`
   width: 100vw;
   background-color: #ffffff;
   display: flex;
@@ -9,6 +9,7 @@ export const HowWorksContainer = styled.div`
   align-items: center;
   flex-direction: column;
   div {
+    align-items: center;
     img {
       width: 62vw;
       height: 13px;
@@ -30,6 +31,7 @@ export const HowWorksContainerTitle = styled.h1`
   font-family: 'Poppins';
   font-style: normal; 
   text-align: center;
+  align-items: center;
   color: #000000;
   font-weight: 700;
   font-size: 60px;
@@ -47,6 +49,7 @@ export const HowWorksContainerContent = styled.p`
   margin: 2.8em 0 1.74em 0;
   width: 92.2vw;
   color: #000000;
+  align-items: center;
   `;
 
 export const HowWorksContainerButton = styled.button`
@@ -64,3 +67,12 @@ export const HowWorksContainerButton = styled.button`
   padding: 12px 22px 14px 21px;
   color: #FFFFFF;
   `;
+
+export const HowWorksContainer = styled.div`
+  align-items: center;
+  .div{
+    display: flex;
+    align-items: center;
+
+  }
+`;

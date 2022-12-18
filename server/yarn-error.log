@@ -16,6 +16,7 @@ Platform:
 Trace: 
   Error: https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz: ESOCKETTIMEDOUT
       at ClientRequest.<anonymous> (C:\Users\ricar\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141517:19)
+      at ClientRequest.<anonymous> (C:\Users\DELL\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141517:19)
       at Object.onceWrapper (node:events:627:28)
       at ClientRequest.emit (node:events:513:28)
       at TLSSocket.emitRequestTimeout (node:_http_client:838:9)

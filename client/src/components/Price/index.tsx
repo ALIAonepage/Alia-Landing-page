@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PriceContainer, StyledPriceTag, DiscountDeliveredBy } from "./styles";
+import axios from "axios";
 
 type PriceTagType = {
     priceStage?: string;
@@ -7,19 +8,32 @@ type PriceTagType = {
 }
 
 export const PriceComponent: React.FC = () => {
+
+    const [firstPrice, setFirstPrice] = useState('');
+    const [modifiedPrice, setModifiedPrice] = useState('');
+
+    useEffect(() => {
+        axios.get('http://localhost:3001/price')
+        .then(res => {
+            setFirstPrice(res.data[0].firstPrice)
+            setModifiedPrice(res.data[0].modifiedPrice)
+        })
+        .catch(err => console.log(err))
+    }, [])
+
     return (
         <PriceContainer>
             <StyledPriceTag>
                 <PriceTag 
                     priceStage="firstPrice"
-                    priceNumber="700" 
+                    priceNumber={firstPrice} 
                 />
             </StyledPriceTag>
 
             <StyledPriceTag>
                 <PriceTag 
                     priceStage="modifiedPrice"
-                    priceNumber="70" 
+                    priceNumber={modifiedPrice}
                 />
             </StyledPriceTag>
 

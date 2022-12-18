@@ -60,6 +60,20 @@ const SubscriptionForm: React.FC = () => {
         }
         ).then(log => {console.log(log)})
         .catch(err => {console.log(err)})
+
+        apiAxios.post('/email',
+        {
+            "firstName": firstName,
+            "phoneNumber": phoneNumber,
+            "email": email,
+            "company": company,
+            "partnersNumber": partnersNumber,
+            "segment": segment,
+            "solutionDescribe": solutionDescribe,
+            "site": site
+        }
+        ).then(log => {console.log(log)})
+        .catch(err => {console.log(err)})
         
         console.log(
             `

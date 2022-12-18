@@ -1,7 +1,7 @@
 import styled from 'styled-components'; 
 import { PoppinsBold, PoppinsLight } from '../../assets/index';
 
-export const PartnershipsContainer = styled.div`
+export const ContainerTag = styled.div`
   width: 100vw;
   background-color: #ffffff;
   display: flex;
@@ -25,7 +25,6 @@ export const PartnershipsContainer = styled.div`
     align-items: center;
     flex-direction: column;
     width: 22vw;
-    height: 8px;
   }
   div {
     display: flex;
@@ -43,4 +42,7 @@ export const PartnershipsContainer = styled.div`
       height: 122px;
     }
   }
+`;
+
+export const PartnershipsContainer = styled.div`
 `;

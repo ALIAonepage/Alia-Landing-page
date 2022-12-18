@@ -46,3 +46,6 @@ margin: 2.3em 0 2.1em 0;
 width: 85%;
 color: #000000;
   `;
+
+  export const ContainerTag = styled.div`
+  `;

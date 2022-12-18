@@ -1,24 +1,56 @@
 import React from "react";
-import { PartnershipsContainer } from './styles';
+import { PartnershipsContainer, ContainerTag } from './styles';
 import Rectangle from '../../assets/Rectangle.png';
 import {Sebrae, FACEPE} from '../../assets';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { appendFile } from "fs";
 
 type PartnershipsProps = {
     title: string;
-    image1: string;
-    image2: string;
 };
 
+export const PartnershipsTag = ({title}:PartnershipsProps) => {
 
-export const PartnershipsComponent: React.ElementType = ({title, image1, image2}:PartnershipsProps) => {
-    return (
-        <PartnershipsContainer>
+    const [imageArray, setImageArray] = useState<[]>([]);
+    
+    const getImages = async () => {
+        const res = await axios.get('http://localhost:3001/partners');
+        console.log(res.data);
+        setImageArray(res.data);
+    }
+
+    useEffect(() => {
+        getImages();   
+    }, [])
+
+    return(
+        <ContainerTag>
             <h1>{title}</h1>
             <img src={Rectangle} alt="" />
             <div>
-                <img id="image1" src={image1} alt="" />
-                <img id="image2" src={image2} alt="" />
+                {imageArray && (
+                    imageArray.map((image) => (
+                        <img 
+                            key={image['id']}
+                            id={image['id']} 
+                            src={image['imagePartner']} 
+                            alt="" 
+                        />
+                    ))
+                )}
+                {/* <img id={image} src={image} alt="" /> */}
             </div>
+        </ContainerTag>
+    );
+
+}
+
+
+export const PartnershipsComponent: React.ElementType = () => {
+    return (
+        <PartnershipsContainer>
+            <PartnershipsTag title={"Parcerias"}/>
         </PartnershipsContainer>
     );
 }

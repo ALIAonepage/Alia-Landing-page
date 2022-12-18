@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { PoppinsMedium } from "../../assets";
 
 export const StyledSubscriptionComponent = styled.div`
     display: flex;
@@ -27,11 +26,6 @@ export const SubscriptionContainer = styled.div`
     color: #000;
 
     h2{
-        @font-face {
-            font-family: 'Poppins Medium';
-            src: url(${PoppinsMedium}) format('woff2');
-        }
-        font-family: 'Poppins Medium';
         font-size: 45px;
     }
 `;
@@ -51,25 +45,14 @@ export const StyledSubscriptionField = styled.div`
     margin: 20px 0;
     
     label{
-        @font-face {
-            font-family: 'Poppins Medium';
-            src: url(${PoppinsMedium}) format('woff2');
-        }
-        font-family: 'Poppins Medium';
         font-size: 28px;
     }
     
-    input{
-        @font-face {
-            font-family: 'Poppins Medium';
-            src: url(${PoppinsMedium}) format('woff2');
-        }
-        
+    input{        
         display: flex;
         
         width: 100%;
         
-        font-family: 'Poppins Medium';
         font-size: 20px;
         
         padding: 15px;
@@ -96,11 +79,6 @@ export const StyledButton = styled.div`
     color: #fff;
     
     button{
-        @font-face {
-            font-family: 'Poppins Medium';
-            src: url(${PoppinsMedium}) format('woff2');
-        }
-        font-family: 'Poppins Medium';
         font-size: 28px;
         
         padding: 10px;

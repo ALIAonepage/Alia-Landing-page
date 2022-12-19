@@ -9,7 +9,6 @@ export const IntroductionContainer = styled.div`
     justify-content: center;
     align-items: left;
     padding-left: 5%;
-    width: 100%;
     height: 60%;
     background-image: url(${ImgIntroduction}), linear-gradient(180deg, #02ECFF 17.63%, #249EE7 38.24%, #162C8D 64.75%);
     background-repeat: no-repeat;
@@ -39,6 +38,10 @@ export const IntroductionContainer = styled.div`
         font-family: 'Poppins Bold';
         color: #F5F5F5;
         margin: 0;
+
+        @media (max-width: 500px) {
+            font-size: 42px;
+        }
     }
     h2{
         @font-face {

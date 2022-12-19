@@ -6,9 +6,7 @@ export const StyledSubscriptionComponent = styled.div`
     justify-content: center;
     align-items: center;
 
-    padding: 125px 0;
-
-    width: 100vw;
+    padding: 125px 1.5rem;
 
     background: conic-gradient(from -75.47deg at 58.78% 45.77%, #ff2c7d -93.39deg, #02ecff 14.12deg, #249ee7 105.23deg, #162c8d 165.55deg, #ff2c7d 266.61deg, #02ecff 374.12deg);
 `;
@@ -20,7 +18,6 @@ export const SubscriptionContainer = styled.div`
     align-items: center;
     
     width: 804px;
-    
     padding: 30px 60px;
 
     background-color: #fff;
@@ -33,6 +30,14 @@ export const SubscriptionContainer = styled.div`
         }
         font-family: 'Poppins';
         font-size: 45px;
+
+        @media (max-width: 500px) {
+            font-size: 36px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        padding: 30px 20px;
     }
 `;
 
@@ -40,6 +45,10 @@ export const StyledSubscriptionForm = styled.div`
     width: 100%;
 
     padding: 20px 20px;
+
+    @media (max-width: 500px) {
+        padding: 0;
+    }
 `;
 
 export const StyledSubscriptionField = styled.div`
@@ -81,6 +90,10 @@ export const StyledSubscriptionField = styled.div`
 
         #solutionDescribe{
             min-height: 120px;
+        }
+
+        @media (max-width: 500px) {
+            width: 90%;
         }
     }
 `;

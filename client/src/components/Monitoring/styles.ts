@@ -2,20 +2,20 @@ import styled from 'styled-components';
 import { PoppinsBold, PoppinsLight } from '../../assets/index';
 
 export const MonitoringContainer = styled.div`
-  width: 100vw;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   div {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     img {
-      width: 70%;
-      height: 14px;
+      width: 95%;
+      height: 13px;
     }
   }
 `;
@@ -33,7 +33,14 @@ export const MonitoringContainerTitle = styled.h1`
   line-height: 90px;
   margin-top: 40px;
   margin-bottom: 0;
-  width: 41vw;
+
+  @media (max-width: 700px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 28px;
+  }
 `;
 export const MonitoringContainerContent = styled.p`
 

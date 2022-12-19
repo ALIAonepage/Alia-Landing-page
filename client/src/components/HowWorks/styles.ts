@@ -2,16 +2,17 @@ import styled from 'styled-components';
 import { PoppinsBold, PoppinsLight } from '../../assets/index';
 
 export const ContainerTag = styled.div`
-  width: 100vw;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   div {
+    width: 95%;
     align-items: center;
     text-align: center;
     img {
+      width: 95%;
       height: 13px;
     }
   }
@@ -35,9 +36,12 @@ export const HowWorksContainerTitle = styled.h1`
   color: #000000;
   font-weight: 700;
   font-size: 60px;
-  width: 63vw;
   margin-top: 2em;
   margin-bottom: 0;
+
+  @media (max-width: 500px) {
+    font-size: 36px;
+  }
 `;
 export const HowWorksContainerContent = styled.p`
 
@@ -67,7 +71,11 @@ export const HowWorksContainerButton = styled.button`
   line-height: 54px;
   padding: 12px 22px 14px 21px;
   color: #FFFFFF;
-  `;
+
+  @media (max-width: 500px) {
+    right: 0;
+  }
+`;
 
 export const HowWorksContainer = styled.div`
   align-items: center;

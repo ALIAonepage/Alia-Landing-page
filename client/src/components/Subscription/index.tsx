@@ -47,7 +47,6 @@ const SubscriptionForm: React.FC = () => {
     const [site, setSite] = useState("");
 
     const handleSubmit = () => {
-        alert("Obrigado por sua inscrição!");
         apiAxios.post('/subscription',       
         {
             "firstName": firstName,
@@ -59,8 +58,14 @@ const SubscriptionForm: React.FC = () => {
             "solutionDescribe": solutionDescribe,
             "site": site
         }
-        ).then(log => {console.log(log)})
-        .catch(err => {console.log(err)})
+        ).then(log => {
+            console.log(log);
+            alert("Obrigado por sua inscrição!");
+        })
+        .catch(err => {
+            console.log(err);
+            alert("Houve um erro e a inscrição não foi concluída. Por favor, tente de novo.");
+        })
 
         apiAxios.post('/email',
         {

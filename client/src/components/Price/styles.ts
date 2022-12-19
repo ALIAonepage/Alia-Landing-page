@@ -7,7 +7,7 @@ export const PriceContainer = styled.div`
     justify-content: center;
     align-items: center;
 
-    width: 100vw;
+    padding: 1rem;
 
     background-color: #249ee7;
     color: #fff;
@@ -50,6 +50,10 @@ export const StyledPriceTag = styled.div`
 
     .number{
         font-size: 128px;
+
+        @media (max-width: 500px) {
+            font-size: 100px;
+        }
     }
 `;
 
@@ -58,8 +62,15 @@ export const DiscountDeliveredBy = styled.p`
         font-family: 'Poppins Slim';
         src: url(${PoppinsSlim}) format('woff2'); 
     }
+
     font-family: 'Poppins Slim';
     font-size: 64px;
 
+    text-align: center;
+
     margin-top: 30px;
+
+    @media (max-width: 500px) {
+        font-size: 36px;
+    }
 `;

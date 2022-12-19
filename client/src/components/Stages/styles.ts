@@ -3,7 +3,6 @@ import { PoppinsRegular, PoppinsBold } from '../../assets/index'
 
 export const StyledStages = styled.div`
     display: flex;
-    width: 100vw;
     background-color: rgba(255, 255, 255);
     color: #000000;
 
@@ -28,9 +27,18 @@ export const StagesContainer = styled.div`
         margin-bottom: 0;
         font-size: 60px;
 
+        @media (max-width: 500px) {
+            font-size: 40px;
+        }
+    }
+
     img{
-        width: 100px;
-        height: 10px;
+        width: 100%;
+        height: 13px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 120px 20px;
     }
 
 `;
@@ -47,7 +55,7 @@ export const Components = styled.div`
 
 export const ContainerTag = styled.div`
     margin: 40%;
-    text-aling: center; 
+    text-align: center; 
     align-items: center;
     justify-content: center;
     display: flex;

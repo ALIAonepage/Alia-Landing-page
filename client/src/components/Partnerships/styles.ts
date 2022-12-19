@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { PoppinsBold, PoppinsLight } from '../../assets/index';
 
 export const ContainerTag = styled.div`
-  width: 100vw;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -10,7 +9,6 @@ export const ContainerTag = styled.div`
   flex-direction: column;
 
   h1 {
-    width: 22vw;
     height: 96px;
     font-family: 'Poppins';
     font-style: normal;
@@ -19,8 +17,14 @@ export const ContainerTag = styled.div`
     line-height: 96px;
     color: #000000;
     margin-bottom: 0;
+
+    @media (max-width: 500px) {
+      font-size: 40px;
+    }
   }
   img {
+    width: 95%;
+    height: 13px;
     display: flex;
     justify-content: center;
     align-items: center;

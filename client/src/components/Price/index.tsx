@@ -51,7 +51,7 @@ const PriceTag = ({ priceStage, priceNumber }: PriceTagType) => {
                 R$
             </p>
             <p className="number">
-                {priceNumber || "000"}
+                {priceNumber}
             </p>
         </div>
     );

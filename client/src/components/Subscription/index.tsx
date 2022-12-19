@@ -47,7 +47,8 @@ const SubscriptionForm: React.FC = () => {
     const [site, setSite] = useState("");
 
     const handleSubmit = () => {
-        apiAxios.post('/subscription',
+        alert("Obrigado por sua inscrição!");
+        apiAxios.post('/subscription',       
         {
             "firstName": firstName,
             "phoneNumber": phoneNumber,

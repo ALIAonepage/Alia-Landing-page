@@ -14,7 +14,7 @@ export const MonitoringContainer = styled.div`
     align-items: center;
     flex-direction: column;
     img {
-      width: 57%;
+      width: 70%;
       height: 14px;
     }
   }
@@ -32,6 +32,7 @@ export const MonitoringContainerTitle = styled.h1`
   font-size: 60px;
   line-height: 90px;
   margin-top: 40px;
+  margin-bottom: 0;
   width: 41vw;
 `;
 export const MonitoringContainerContent = styled.p`

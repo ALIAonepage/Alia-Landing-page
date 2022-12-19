@@ -8,7 +8,7 @@ import ImgIntroduction from './img.png';
 import PoppinsSlim from './noir-pro/Poppins-Regular.ttf';
 import RecStages from './rectangleStages.png';
 import PoppinsRegular from './noir-pro/Poppins-Bold.ttf';
-import PoppinsMedium from './poppins/Poppins-Medium.ttf';
+import PoppinsMedium from './noir-pro/Poppins-Medium.ttf';
 
 export {
     PoppinsMedium,

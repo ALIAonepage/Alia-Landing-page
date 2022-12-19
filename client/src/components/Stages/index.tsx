@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { StagesContainer, StyledStages, ContainerTag, Components, StagesIcon, StagesTitle} from "./styles";
 import { RecStages } from "../../assets";
 import axios from "axios";
-import apiAxios from "../../services/api";
 
 type StagesProps = {
     icon: string;

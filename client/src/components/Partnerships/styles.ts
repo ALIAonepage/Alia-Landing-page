@@ -18,13 +18,13 @@ export const ContainerTag = styled.div`
     font-size: 64px;
     line-height: 96px;
     color: #000000;
+    margin-bottom: 0;
   }
   img {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 22vw;
   }
   div {
     display: flex;

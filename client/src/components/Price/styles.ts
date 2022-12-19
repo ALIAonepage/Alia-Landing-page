@@ -8,8 +8,6 @@ export const PriceContainer = styled.div`
 
     width: 100vw;
 
-    padding: 80px 60px;
-
     background-color: #249ee7;
     color: #fff;
 `;

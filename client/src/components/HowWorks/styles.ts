@@ -10,8 +10,8 @@ export const ContainerTag = styled.div`
   flex-direction: column;
   div {
     align-items: center;
+    text-align: center;
     img {
-      width: 62vw;
       height: 13px;
     }
   }
@@ -37,6 +37,7 @@ export const HowWorksContainerTitle = styled.h1`
   font-size: 60px;
   width: 63vw;
   margin-top: 2em;
+  margin-bottom: 0;
 `;
 export const HowWorksContainerContent = styled.p`
 

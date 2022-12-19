@@ -8,11 +8,12 @@ export const IntroductionContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    padding-left: 10%;
+    padding-left: 5%;
     width: 100%;
-    height: 700px;
-    background-repeat: no-repeat;
+    height: 60%;
     background-image: url(${ImgIntroduction}), linear-gradient(180deg, #02ECFF 17.63%, #249EE7 38.24%, #162C8D 64.75%);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     #text{
         display: flex;
@@ -25,7 +26,7 @@ export const IntroductionContainer = styled.div`
     img{
         width: 160px;
         height: 154px;
-        margin: 2%;
+        margin-bottom: 2%;
     }
     h1{
         @font-face {
@@ -67,7 +68,8 @@ export const IntroductionContainer = styled.div`
         font-size: 24px;
         width: 170px;
         height: 37px;
-        margin-top: 5%;
+        margin-top: 3%;
+        margin-bottom: 5%;
     }
     
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PoppinsSlim } from "../../assets";
 
 export const PriceContainer = styled.div`
     display: flex;
@@ -17,6 +18,25 @@ export const StyledPriceTag = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+
+        p {
+            @font-face {
+                font-family: 'Poppins Slim';
+                src: url(${PoppinsSlim}) format('woff2'); 
+            }
+            font-family: 'Poppins Slim';
+            margin: 0 auto;
+        }
+    }
+    
+    .firstPrice{
+        color: #fff;
+        
+        background: linear-gradient(163deg, transparent calc(49% - 1px), #fff 49%, #fff 51%, transparent calc(51% + 1px) );
+    }
+    
+    .modifiedPrice{
+        color: #ff2c7d;
     }
 
     .cifra{
@@ -31,19 +51,14 @@ export const StyledPriceTag = styled.div`
     .number{
         font-size: 128px;
     }
-
-    .firstPrice{
-        color: #fff;
-
-        background: linear-gradient(163deg, transparent calc(49% - 1px), #fff 49%, #fff 51%, transparent calc(51% + 1px) );
-    }
-
-    .modifiedPrice{
-        color: #ff2c7d;
-    }
 `;
 
 export const DiscountDeliveredBy = styled.p`
+    @font-face {
+        font-family: 'Poppins Slim';
+        src: url(${PoppinsSlim}) format('woff2'); 
+    }
+    font-family: 'Poppins Slim';
     font-size: 64px;
 
     margin-top: 30px;

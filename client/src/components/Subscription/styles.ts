@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PoppinsRegular, PoppinsSlim } from "../../assets";
 
 export const StyledSubscriptionComponent = styled.div`
     display: flex;
@@ -26,6 +27,11 @@ export const SubscriptionContainer = styled.div`
     color: #000;
 
     h2{
+        @font-face {
+            font-family: 'Poppins';
+            src: url(${PoppinsRegular}) format('woff2'); 
+        }
+        font-family: 'Poppins';
         font-size: 45px;
     }
 `;
@@ -45,10 +51,21 @@ export const StyledSubscriptionField = styled.div`
     margin: 20px 0;
     
     label{
+        @font-face {
+            font-family: 'Poppins Slim';
+            src: url(${PoppinsSlim}) format('woff2'); 
+        }
+        font-family: 'Poppins Slim';
         font-size: 28px;
     }
     
-    input{        
+    input{
+        @font-face {
+            font-family: 'Poppins Slim';
+            src: url(${PoppinsSlim}) format('woff2'); 
+        }
+        font-family: 'Poppins Slim';
+
         display: flex;
         
         width: 100%;
@@ -79,7 +96,13 @@ export const StyledButton = styled.div`
     color: #fff;
     
     button{
-        font-size: 28px;
+        @font-face {
+            font-family: 'Poppins Slim';
+            src: url(${PoppinsSlim}) format('woff2'); 
+        }
+        font-family: 'Poppins Slim';
+
+        font-size: 24px;
         
         padding: 10px;
 

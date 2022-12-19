@@ -64,7 +64,7 @@ export const IntroductionContainer = styled.div`
         border-radius: 8px;
         text-align: center;
         justify-content: center;
-        align-itens: center;
+        align-items: center;
         font-size: 24px;
         width: 170px;
         height: 37px;

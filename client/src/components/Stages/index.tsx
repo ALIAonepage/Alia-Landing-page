@@ -46,7 +46,7 @@ export const StagesComponent: React.FC = () => {
         <StyledStages>
             <StagesContainer>
                 <h1>Etapas</h1>
-                <img src={RecStages}></img>
+                <img className="img-underline" src={RecStages}></img>
                 <Components>
                     {stepsList.map((step) => (
                         <StagesTag key={step['id']} icon={step['stepsImage']} title={step['stepsDescription']}/>

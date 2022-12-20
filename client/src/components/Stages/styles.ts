@@ -37,6 +37,10 @@ export const StagesContainer = styled.div`
         width: 100%;
     }
 
+    .img-underline{
+        height: 13px;
+    }
+
     @media (max-width: 500px) {
         padding: 120px 20px;
     }
@@ -66,7 +70,6 @@ export const ContainerTag = styled.div`
 
 export const StagesIcon = styled.div`
     width: 60px;
-    height: 60px;
     display: flex;
 `;
 
@@ -80,8 +83,6 @@ export const StagesTitle = styled.div`
     font-family: 'Poppins';
     text-align: center; 
     font-size: 30px;
-    width: 60px;
-    height: 60px;
     
 `;
    

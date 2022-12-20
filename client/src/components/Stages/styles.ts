@@ -22,6 +22,7 @@ export const StagesContainer = styled.div`
     }
     
     h1{
+        text-align: center;
         color: #000000;
         font-family: 'Poppins Bold';
         margin-bottom: 0;
@@ -34,7 +35,6 @@ export const StagesContainer = styled.div`
 
     img{
         width: 100%;
-        height: 13px;
     }
 
     @media (max-width: 500px) {
@@ -50,11 +50,13 @@ export const Components = styled.div`
     align-items: center;
     text-align: center;
     padding-top: 40px;
+    width: 100%;
 
 `;
 
 export const ContainerTag = styled.div`
-    margin: 40%;
+    margin: 1rem;
+    width: 25%;
     text-align: center; 
     align-items: center;
     justify-content: center;

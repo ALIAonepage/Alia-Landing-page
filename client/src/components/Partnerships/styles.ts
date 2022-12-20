@@ -24,7 +24,6 @@ export const ContainerTag = styled.div`
   }
   img {
     width: 95%;
-    height: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,13 +36,8 @@ export const ContainerTag = styled.div`
     margin: 119px 0 221px 0;
     gap: 226px;
 
-    #image1 {
-      width: 276px;
-      height: 150px;
-    }
-    #image2 {
-      width: 336px;
-      height: 122px;
+    img {
+      width: 22vw;
     }
   }
 `;

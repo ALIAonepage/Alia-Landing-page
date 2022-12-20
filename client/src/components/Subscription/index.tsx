@@ -47,52 +47,65 @@ const SubscriptionForm: React.FC = () => {
     const [site, setSite] = useState("");
 
     const handleSubmit = () => {
-        apiAxios.post('/subscription',       
-        {
-            "firstName": firstName,
-            "phoneNumber": phoneNumber,
-            "email": email,
-            "company": company,
-            "partnersNumber": partnersNumber,
-            "segment": segment,
-            "solutionDescribe": solutionDescribe,
-            "site": site
-        }
-        ).then(log => {
-            console.log(log);
-            alert("Obrigado por sua inscrição!");
-        })
-        .catch(err => {
-            console.log(err);
-            alert("Houve um erro e a inscrição não foi concluída. Por favor, tente de novo.");
-        })
+        if (
+            firstName &&
+            phoneNumber &&
+            email &&
+            company &&
+            partnersNumber &&
+            segment &&
+            solutionDescribe
+        ) {
 
-        apiAxios.post('/email',
-        {
-            "firstName": firstName,
-            "phoneNumber": phoneNumber,
-            "email": email,
-            "company": company,
-            "partnersNumber": partnersNumber,
-            "segment": segment,
-            "solutionDescribe": solutionDescribe,
-            "site": site
+            apiAxios.post('/subscription',       
+            {
+                "firstName": firstName,
+                "phoneNumber": phoneNumber,
+                "email": email,
+                "company": company,
+                "partnersNumber": partnersNumber,
+                "segment": segment,
+                "solutionDescribe": solutionDescribe,
+                "site": site
+            }
+            ).then(log => {
+                console.log(log);
+                alert("Obrigado por sua inscrição!");
+            })
+            .catch(err => {
+                console.log(err);
+                alert("Houve um erro e a inscrição não foi concluída. Por favor, tente de novo.");
+            })
+    
+            apiAxios.post('/email',
+            {
+                "firstName": firstName,
+                "phoneNumber": phoneNumber,
+                "email": email,
+                "company": company,
+                "partnersNumber": partnersNumber,
+                "segment": segment,
+                "solutionDescribe": solutionDescribe,
+                "site": site
+            }
+            ).then(log => {console.log(log)})
+            .catch(err => {console.log(err)})
+            
+            console.log(
+                `
+                firstName: ${firstName}
+                phoneNumber: ${phoneNumber}
+                email: ${email}
+                company: ${company}
+                partnersNumber: ${partnersNumber}
+                segment: ${segment}
+                solutionDescribe: ${solutionDescribe}
+                site: ${site}
+                `
+            )
+        } else {
+            alert('É obrigatório preencher todos os campos, exceto de "Site:"');
         }
-        ).then(log => {console.log(log)})
-        .catch(err => {console.log(err)})
-        
-        console.log(
-            `
-            firstName: ${firstName}
-            phoneNumber: ${phoneNumber}
-            email: ${email}
-            company: ${company}
-            partnersNumber: ${partnersNumber}
-            segment: ${segment}
-            solutionDescribe: ${solutionDescribe}
-            site: ${site}
-            `
-        )
     }
 
 

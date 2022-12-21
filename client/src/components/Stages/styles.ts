@@ -13,7 +13,6 @@ export const StagesContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     padding: 120px 80px;
 
     @font-face {
@@ -56,6 +55,9 @@ export const Components = styled.div`
     padding-top: 40px;
     width: 100%;
 
+    @media (max-width: 950px) {
+        flex-wrap: wrap;
+    }
 `;
 
 export const ContainerTag = styled.div`
@@ -66,10 +68,19 @@ export const ContainerTag = styled.div`
     justify-content: center;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 950px) {
+        width: 40%;
+    }
+
+    @media (max-width: 650px) {
+        width: 50%;
+    }
 `;
 
 export const StagesIcon = styled.div`
-    width: 60px;
+    width: 100px;
+    margin-bottom: 1rem;
     display: flex;
 `;
 

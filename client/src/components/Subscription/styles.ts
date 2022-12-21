@@ -30,6 +30,7 @@ export const SubscriptionContainer = styled.div`
         }
         font-family: 'Poppins';
         font-size: 45px;
+        text-align: center;
 
         @media (max-width: 500px) {
             font-size: 36px;

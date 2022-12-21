@@ -55,7 +55,12 @@ export const HowWorksContainerContent = styled.p`
   width: 92.2vw;
   color: #000000;
   align-items: center;
-  `;
+
+  @media (max-width: 650px){
+    font-size: 20px;
+    line-height: 32px;
+  }
+`;
 
 export const HowWorksContainerButton = styled.button`
   position: relative;

@@ -44,16 +44,21 @@ export const MonitoringContainerTitle = styled.h1`
 `;
 export const MonitoringContainerContent = styled.p`
 
-font-family: "PoppinsLight";
-font-style: normal;
-font-weight: 300;
-font-size: 28px;
-line-height: 42px;
-text-align: center;
-margin: 2.3em 0 2.1em 0;
-width: 85%;
-color: #000000;
-  `;
+  font-family: "PoppinsLight";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: center;
+  margin: 2.3em 0 2.1em 0;
+  width: 85%;
+  color: #000000;
 
-  export const ContainerTag = styled.div`
-  `;
+  @media (max-width: 650px){
+    font-size: 20px;
+    line-height: 32px;
+  }
+`;
+
+export const ContainerTag = styled.div`
+`;

@@ -13,7 +13,8 @@ export const StagesContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 120px 80px;
+    padding: 120px 40px;
+    width: 100%;
 
     @font-face {
     font-family: 'Poppins Bold';

@@ -38,6 +38,22 @@ export const ContainerTag = styled.div`
 
     img {
       width: 22vw;
+
+    }
+
+    @media (max-width: 700px) {
+      flex-wrap: wrap;
+      gap: 110px;
+
+      img {
+        width: 40%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      img {
+        width: 60%;
+      }
     }
   }
 `;
